@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Sanjay S - UI/UX Designer & Editor Portfolio. Specializing in intuitive digital experiences and compelling visual stories.">
+    <title>Sanjay S | UI/UX Designer & Editor</title>
+    <!-- Fonts: Plus Jakarta Sans for headers, Inter for body text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <!-- Ambient Animated Background Layer -->
+    <div class="ambient-background">
+        <!-- Glowing Aurora Blobs -->
+        <div class="ambient-blob blob-purple"></div>
+        <div class="ambient-blob blob-blue"></div>
+        <div class="ambient-blob blob-cyan"></div>
+        
+        <!-- Ambient Noise / Wave Overlay -->
+        <div class="ambient-wave-overlay"></div>
+        
+        <!-- Drift Particles -->
+        <div class="ambient-particles">
+            <div class="ambient-particle p-1"></div>
+            <div class="ambient-particle p-2"></div>
+            <div class="ambient-particle p-3"></div> 
+            <div class="ambient-particle p-4"></div>
+            <div class="ambient-particle p-5"></div>
+            <div class="ambient-particle p-6"></div>
+            <div class="ambient-particle p-7"></div>
+            <div class="ambient-particle p-8"></div>
+        </div>
+    </div>
+
+    <!-- Preloader Overlay (Interactive Video Editing Dashboard Simulator) -->
+    <div id="preloader" class="preloader-overlay">
+        <div class="video-editor-container">
+            <!-- 1. Floating Toolbar -->
+            <div class="editor-panel floating-toolbar glass-card">
+                <div class="tool-btn active"><i data-lucide="mouse-pointer"></i></div>
+                <div class="tool-btn"><i data-lucide="scissors"></i></div>
+                <div class="tool-btn"><i data-lucide="music"></i></div>
+                <div class="tool-btn"><i data-lucide="type"></i></div>
+            </div>
+
+            <!-- 2. Main Preview Window -->
+            <div class="editor-panel preview-window glass-card">
+                <div class="panel-header">
+                    <div class="header-left">
+                        <i data-lucide="clapperboard" class="panel-icon clapper-icon"></i>
+                        <span class="panel-title">Program: Sanjay_Cut_V2.mp4</span>
+                    </div>
+                    <div class="header-right">
+                        <span class="badge-live">● RENDERING</span>
+                        <span class="resolution-tag">4K HDR</span>
+                    </div>
+                </div>
+                <div class="preview-display">
+                    <div class="visual-canvas">
+                        <div class="canvas-grid"></div>
+                        <div class="safe-area-marker top-left"></div>
+                        <div class="safe-area-marker top-right"></div>
+                        <div class="safe-area-marker bottom-left"></div>
+                        <div class="safe-area-marker bottom-right"></div>
+                        <div class="canvas-graphic-wrapper">
+                            <div class="canvas-shape shape-1"></div>
+                            <div class="canvas-shape shape-2"></div>
+                            <div class="canvas-overlay-text">EXPORTING: 0%</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="preview-controls">
+                    <div class="scrub-bar-container">
+                        <div class="scrub-bar">
+                            <div class="scrub-progress"></div>
+                            <div class="scrub-handle"></div>
+                        </div>
+                    </div>
+                    <div class="controls-row">
+                        <div class="playback-buttons">
+                            <button class="control-btn"><i data-lucide="skip-back"></i></button>
+                            <button class="control-btn play-pause-btn active"><i data-lucide="pause"></i></button>
+                            <button class="control-btn"><i data-lucide="skip-forward"></i></button>
+                        </div>
+                        <div id="preview-timecode" class="timecode-display">00:00:00:00</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Color Grading Panel -->
+            <div class="editor-panel color-panel glass-card">
+                <div class="panel-header">
+                    <div class="header-left">
+                        <i data-lucide="sliders" class="panel-icon"></i>
+                        <span class="panel-title">Color Grading</span>
+                    </div>
+                </div>
+                <div class="color-panel-body">
+                    <div class="color-wheel-wrapper">
+                        <div class="color-wheel">
+                            <div class="color-wheel-center"></div>
+                            <div class="color-wheel-cursor"></div>
+                        </div>
+                        <span class="wheel-label">Midtones</span>
+                    </div>
+                    <div class="color-sliders">
+                        <div class="slider-group">
+                            <div class="slider-info">
+                                <span>Exposure</span>
+                                <span class="slider-val">+0.4</span>
+                            </div>
+                            <div class="slider-track-container">
+                                <div class="slider-progress exposure-progress"></div>
+                                <div class="slider-thumb exposure-thumb"></div>
+                            </div>
+                        </div>
+                        <div class="slider-group">
+                            <div class="slider-info">
+                                <span>Contrast</span>
+                                <span class="slider-val">1.15</span>
+                            </div>
+                            <div class="slider-track-container">
+                                <div class="slider-progress contrast-progress"></div>
+                                <div class="slider-thumb contrast-thumb"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Audio Panel -->
+            <div class="editor-panel audio-panel glass-card">
+                <div class="panel-header">
+                    <div class="header-left">
+                        <i data-lucide="volume-2" class="panel-icon"></i>
+                        <span class="panel-title">Audio Mixer</span>
+                    </div>
+                </div>
+                <div class="audio-panel-body">
+                    <div class="vu-meters-container">
+                        <div class="vu-channel">
+                            <div class="vu-fill vu-left"></div>
+                        </div>
+                        <div class="vu-channel">
+                            <div class="vu-fill vu-right"></div>
+                        </div>
+                    </div>
+                    <div class="eq-columns">
+                        <div class="eq-bar" style="--h: 60%; --delay: 0.1s;"></div>
+                        <div class="eq-bar" style="--h: 80%; --delay: 0.3s;"></div>
+                        <div class="eq-bar" style="--h: 40%; --delay: 0.2s;"></div>
+                        <div class="eq-bar" style="--h: 70%; --delay: 0.5s;"></div>
+                        <div class="eq-bar" style="--h: 50%; --delay: 0.4s;"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Timeline Panel -->
+            <div class="editor-panel timeline-window glass-card">
+                <div class="panel-header">
+                    <div class="header-left">
+                        <i data-lucide="film" class="panel-icon"></i>
+                        <span class="panel-title">Timeline: Main Sequence</span>
+                    </div>
+                    <div class="header-right">
+                        <span class="timeline-fps">23.976 fps</span>
+                    </div>
+                </div>
+                <div class="timeline-body">
+                    <div class="timeline-playhead-line">
+                        <div class="playhead-cap"></div>
+                    </div>
+                    <div class="tracks-container">
+                        <div class="timeline-track-row">
+                            <span class="track-label">V2</span>
+                            <div class="track-clips-lane">
+                                <div class="clip-block text-clip" style="--clip-start: 10%; --clip-width: 40%;">
+                                    <span class="clip-title">Text_Overlay_LUT</span>
+                                </div>
+                                <div class="clip-block text-clip" style="--clip-start: 60%; --clip-width: 30%;">
+                                    <span class="clip-title">Credits.prproj</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-track-row">
+                            <span class="track-label">V1</span>
+                            <div class="track-clips-lane">
+                                <div class="clip-block video-clip active" style="--clip-start: 0%; --clip-width: 55%;">
+                                    <span class="clip-title">Aesthetic_Intro.mp4</span>
+                                </div>
+                                <div class="clip-block video-clip" style="--clip-start: 55%; --clip-width: 45%;">
+                                    <span class="clip-title">Cinematic_Graded.mov</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="timeline-track-row">
+                            <span class="track-label">A1</span>
+                            <div class="track-clips-lane">
+                                <div class="clip-block audio-clip" style="--clip-start: 0%; --clip-width: 100%;">
+                                    <span class="clip-title">Cinematic_Beats_Master.wav</span>
+                                    <div class="waveform-svg-container">
+                                        <svg class="waveform-svg" viewBox="0 0 400 20" preserveAspectRatio="none">
+                                            <path class="waveform-path" d="M 0,10 Q 10,2 20,10 T 40,10 T 60,10 T 80,10 T 100,10 T 120,10 T 140,10 T 160,10 T 180,10 T 200,10 T 220,10 T 240,10 T 260,10 T 280,10 T 300,10 T 320,10 T 340,10 T 360,10 T 380,10 T 400,10" />
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress Bar -->
+    <div id="scroll-progress" class="scroll-progress-bar"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Ambient Background Lights -->
+    <div class="ambient-glow bg-glow-1"></div>
+    <div class="ambient-glow bg-glow-2"></div>
+    <div class="ambient-glow bg-glow-3"></div>
+
+    <!-- Header Navbar -->
+    <header class="navbar">
+        <div class="navbar-container container">
+            <a href="https://www.linkedin.com/in/sanjay-s-876253321?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="logo" title="View LinkedIn Profile">
+                Sanjay S
+            </a>
+            
+            <nav class="nav-menu">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#education" class="nav-link">Education</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <!-- Direct Theme Switcher Button for Mobile & Desktop -->
+                <button type="button" class="header-theme-btn theme-toggle-trigger glass-card" aria-label="Toggle dark/light theme" title="Switch Theme (Dark / Light)">
+                    <i data-lucide="moon" class="theme-icon moon-icon"></i>
+                    <i data-lucide="sun" class="theme-icon sun-icon"></i>
+                </button>
+
+                <!-- Mobile Navigation Toggle -->
+                <button type="button" class="mobile-nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Nav Menu Drawer -->
+    <div class="mobile-menu-drawer">
+        <nav class="mobile-nav-menu">
+            <a href="#about" class="mobile-nav-link">About</a>
+            <a href="#education" class="mobile-nav-link">Education</a>
+            <a href="#skills" class="mobile-nav-link">Skills</a>
+            <a href="#projects" class="mobile-nav-link">Projects</a>
+            <a href="#contact" class="mobile-nav-link">Contact</a>
+        </nav>
+        <div class="mobile-drawer-footer">
+            <button type="button" class="mobile-theme-btn theme-toggle-trigger" aria-label="Toggle dark/light theme">
+                <span class="theme-label-text">Switch Mode</span>
+                <span class="theme-icon-box">
+                    <i data-lucide="moon" class="theme-icon moon-icon"></i>
+                    <i data-lucide="sun" class="theme-icon sun-icon"></i>
+                </span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-container container">
+            <div class="hero-content">
+                <div class="badge-container hero-stagger-1">
+                    <span class="badge">Available for freelance editor</span>
+                </div>
+                <h1 class="hero-title hero-stagger-2">
+                    Hi, I'm <span class="gradient-text text-grow">Sanjay S</span>
+                </h1>
+                <h2 class="hero-subtitle hero-stagger-3">
+                    I am a <span class="typing-target">UI/UX Designer</span>
+                </h2>
+                <p class="hero-description hero-stagger-4">
+                    Hi, I’m <strong>Sanjay</strong>, an MCA student with a strong interest in <strong>UI/UX Design and Digital Editing</strong>. I enjoy creating clean, user-friendly interfaces and transforming ideas into engaging visual experiences.
+                </p>
+                <div class="hero-ctas hero-stagger-5">
+                    <a href="#projects" class="btn btn-primary ripple">
+                        <span>View My Work</span>
+                        <i data-lucide="arrow-right" class="btn-icon"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary ripple">
+                        <span>Let's Connect</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-visual hero-stagger-visual">
+                <div class="profile-blob-container">
+                    <div class="blob-shape">
+                        <img src="images/sanjay_photo.jpg" alt="Sanjay S">
+                    </div>
+                    
+                    <!-- Floating Badge: UI/UX Design -->
+                    <div class="floating-card badge-uiux">
+                        <div class="card-icon uiux-icon">
+                            <i data-lucide="layout"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-title">UI/UX Design</span>
+                            <span class="card-subtitle">Clean Interfaces</span>
+                        </div>
+                    </div>
+                    
+                    <!-- Floating Badge: Video Editing -->
+                    <div class="floating-card badge-video">
+                        <div class="card-icon video-icon">
+                            <i data-lucide="video"></i>
+                        </div>
+                        <div class="card-info">
+                            <span class="card-title">Video Editing</span>
+                            <span class="card-subtitle">Seamless Stories</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <a href="#about" aria-label="Scroll down">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section section-padding">
+        <div class="container">
+            <div class="section-header scroll-reveal fade-up">
+                <span class="section-tag">A Glance Info</span>
+                <h2 class="section-title">About Me</h2>
+                <div class="section-line"></div>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text scroll-reveal fade-up">
+                    <p class="lead-text">
+                        Hi, I’m <strong>Sanjay</strong>, an MCA student with a strong interest in <strong>UI/UX Design and Digital Editing</strong>. Along with my academic journey in Computer Applications, I’m developing my skills in <strong>UI/UX design, graphic design, and photo/video editing</strong>. I’m passionate about learning new technologies, exploring creative ideas, and improving my design skills through practical projects.
+                    </p>
+                    <p class="body-text">
+                        I believe good design is not just about how something looks, but also about <strong>how easily and effectively people can use it</strong>. My goal is to combine creativity and technology to create meaningful digital experiences.
+                    </p>
+                    
+                    <div class="resume-actions">
+                        <a href="images/sanjay_resume.jpg" target="_blank" class="btn btn-primary ripple">
+                            <span>View My Resume</span>
+                            <i data-lucide="file-text" class="btn-icon"></i>
+                        </a>
+                    </div>
+                    
+                    <div class="about-stats-grid">
+                        <div class="stat-card">
+                            <h3 class="stat-number" data-target="2" data-suffix="+">2+</h3>
+                            <p class="stat-label">Years Learning & Coding</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3 class="stat-number" data-target="15" data-suffix="+">15+</h3>
+                            <p class="stat-label">Projects Completed</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3 class="stat-number" data-target="100" data-suffix="%">100%</h3>
+                            <p class="stat-label">Creative Energy</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-skills-quote scroll-reveal fade-up delay-200">
+                    <div class="quote-card glass-card">
+                        <div class="quote-icon">
+                            <i data-lucide="quote"></i>
+                        </div>
+                        <p class="quote-text">
+                            "Design is a formal response to a strategic question. Video editing is where the magic, pacing, and emotional connection truly lock together."
+                        </p>
+                        <div class="quote-author">
+                            <div class="author-avatar">SS</div>
+                            <div class="author-info">
+                                <strong>Sanjay S</strong>
+                                <span>UI/UX Designer & Editor</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="education-section section-padding">
+        <div class="container">
+            <div class="section-header scroll-reveal fade-up">
+                <span class="section-tag">My Qualifications</span>
+                <h2 class="section-title">Education</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="timeline-container">
+                <div class="timeline-line"></div>
+                
+                <!-- Timeline Item 1 -->
+                <div class="timeline-item scroll-reveal fade-up">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot pulsing-dot">
+                            <i data-lucide="graduation-cap"></i>
+                        </div>
+                    </div>
+                    <div class="timeline-content glass-card hover-glow">
+                        <span class="timeline-date">2026 - Present</span>
+                        <h3 class="timeline-degree">Master of Computer Applications (MCA)</h3>
+                        <h4 class="timeline-institution">SRM University, Ramapuram, Chennai</h4>
+                        <p class="timeline-desc">
+                            Currently pursuing advanced studies in computer applications, specializing in software development methodology, advanced data frameworks, web systems design, and modern interactive user interfaces.
+                        </p>
+                        <span class="timeline-status-badge">In Progress</span>
+                    </div>
+                </div>
+
+                <!-- Timeline Item 2 -->
+                <div class="timeline-item scroll-reveal fade-up delay-200">
+                    <div class="timeline-dot-wrapper">
+                        <div class="timeline-dot">
+                            <i data-lucide="graduation-cap"></i>
+                        </div>
+                    </div>
+                    <div class="timeline-content glass-card hover-glow">
+                        <span class="timeline-date">2023 - 2026</span>
+                        <h3 class="timeline-degree">Bachelor of Computer Applications (BCA)</h3>
+                        <h4 class="timeline-institution">University of Madras, Chennai</h4>
+                        <p class="timeline-desc">
+                            A three-year undergraduate program blending computer science fundamentals — programming, databases, and web technologies — with practical application development, providing a strong technical foundation for design and development work.
+                        </p>
+                        <span class="timeline-status-badge success">Graduated 2026</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section section-padding">
+        <div class="container">
+            <div class="section-header scroll-reveal fade-up">
+                <span class="section-tag">What I Excel At</span>
+                <h2 class="section-title">My Skills</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="skills-grid">
+                <!-- Skill Group: Core Disciplines -->
+                <div class="skills-column scroll-reveal fade-up">
+                    <h3 class="skills-column-title"><i data-lucide="activity"></i> Core Expertise</h3>
+                    <div class="skills-list">
+                        
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">UI/UX Design</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--percent: 90%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Photo & Video Editing</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--percent: 85%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Wireframing & Prototyping</span>
+                                <span class="skill-percentage">88%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--percent: 88%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Visual Design</span>
+                                <span class="skill-percentage">82%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--percent: 82%;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span class="skill-name">Attention to Detail</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-progress" style="--percent: 95%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Skill Group: Design & Creative Tools -->
+                <div class="skills-column scroll-reveal fade-up delay-200">
+                    <h3 class="skills-column-title"><i data-lucide="wrench"></i> Tools & Technologies</h3>
+                    <div class="tools-container">
+                        
+                        <div class="tool-badge-card glass-card hover-glow">
+                            <div class="tool-icon bg-figma">
+                                <i data-lucide="layers"></i>
+                            </div>
+                            <span class="tool-name">Figma</span>
+                            <span class="tool-level">Advanced</span>
+                        </div>
+
+
+
+                        <div class="tool-badge-card glass-card hover-glow">
+                            <div class="tool-icon bg-photoshop">
+                                <i data-lucide="image"></i>
+                            </div>
+                            <span class="tool-name">Photoshop</span>
+                            <span class="tool-level">Expert</span>
+                        </div>
+
+                        <div class="tool-badge-card glass-card hover-glow">
+                            <div class="tool-icon bg-premiere">
+                                <i data-lucide="clapperboard"></i>
+                            </div>
+                            <span class="tool-name">Premiere Pro</span>
+                            <span class="tool-level">Advanced</span>
+                        </div>
+
+                        <div class="tool-badge-card glass-card hover-glow">
+                            <div class="tool-icon bg-aftereffects">
+                                <i data-lucide="sparkles"></i>
+                            </div>
+                            <span class="tool-name">After Effects</span>
+                            <span class="tool-level">Intermediate</span>
+                        </div>
+
+                        <div class="tool-badge-card glass-card hover-glow">
+                            <div class="tool-icon bg-code">
+                                <i data-lucide="code"></i>
+                            </div>
+                            <span class="tool-name">HTML/CSS/JS</span>
+                            <span class="tool-level">Intermediate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Color Grading Showcase -->
+            <div class="color-sandbox-showcase scroll-reveal fade-up">
+                <div class="sandbox-header">
+                    <h3 class="sandbox-title"><i data-lucide="sliders"></i> Color Grading Sandbox</h3>
+                    <p class="sandbox-subtitle">Slide to compare RAW LOG footage against the final graded cinematic look</p>
+                </div>
+                <div class="sandbox-wrapper glass-card">
+                    <!-- Graded Layer (Base) -->
+                    <div class="sandbox-layer layer-graded"></div>
+                    <!-- Raw Layer (Clipped Overlay) -->
+                    <div class="sandbox-layer layer-raw"></div>
+                    
+                    <!-- Labels -->
+                    <span class="sandbox-badge raw-badge">RAW LOG</span>
+                    <span class="sandbox-badge graded-badge">GRADED Rec.709</span>
+                    
+                    <!-- Slider Input -->
+                    <input type="range" min="0" max="100" value="50" class="sandbox-slider" id="grading-slider" aria-label="Color grading slider">
+                    
+                    <!-- Vertical Split Line & Handle -->
+                    <div class="sandbox-handle" id="sandbox-handle">
+                        <div class="handle-line"></div>
+                        <div class="handle-button">
+                            <i data-lucide="chevron-left"></i>
+                            <i data-lucide="chevron-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="projects-section section-padding">
+        <div class="container">
+            <div class="section-header scroll-reveal fade-up">
+                <span class="section-tag">Projects</span>
+                <h2 class="section-title">Video Editing</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <!-- Project Grid: Instagram Video Embeds -->
+            <div class="project-grid instagram-grid">
+                
+                <!-- Instagram Video 1 -->
+                <div class="project-card instagram-card glass-card scroll-reveal fade-up" data-category="editing">
+                    <div class="instagram-wrapper">
+                        <iframe src="https://www.instagram.com/reel/DU5qodmCbq-/embed" class="instagram-iframe" allowtransparency="true" frameborder="0" scrolling="no" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+                <!-- Instagram Video 2 -->
+                <div class="project-card instagram-card glass-card scroll-reveal fade-up delay-100" data-category="editing">
+                    <div class="instagram-wrapper">
+                        <iframe src="https://www.instagram.com/reel/DTNiYaACRT3/embed" class="instagram-iframe" allowtransparency="true" frameborder="0" scrolling="no" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- View Profile Button CTA -->
+            <div class="projects-cta scroll-reveal fade-up delay-200" style="display: flex; justify-content: center; margin-top: 40px; width: 100%;">
+                <a href="https://www.instagram.com/sandy_editz_19" target="_blank" class="btn btn-primary ripple">
+                    <span>View Instagram Profile</span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="btn-icon"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section section-padding">
+        <div class="container">
+            <div class="section-header scroll-reveal fade-up">
+                <span class="section-tag">Let's Create Together</span>
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="section-line"></div>
+            </div>
+
+            <div class="contact-container">
+                <!-- Contact info panel -->
+                <div class="contact-info scroll-reveal fade-up">
+                    <h3 class="info-title">Have a project idea? Let's discuss!</h3>
+                    <p class="info-description">
+                        I am currently looking for freelance assignments or junior/mid roles in UX design, creative video styling, and interactive layouts. Drop a message and let's work on something together.
+                    </p>
+
+                    <div class="info-items">
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i data-lucide="mail"></i>
+                            </div>
+                            <div class="info-text">
+                                <span>Email Me</span>
+                                <a href="mailto:sandyeditz19@gmail.com">sandyeditz19@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i data-lucide="phone"></i>
+                            </div>
+                            <div class="info-text">
+                                <span>Call Me</span>
+                                <a href="tel:9087397204">9087397204</a>
+                            </div>
+                        </div>
+
+                        <div class="info-item">
+                            <div class="info-icon">
+                                <i data-lucide="map-pin"></i>
+                            </div>
+                            <div class="info-text">
+                                <span>Location</span>
+                                <strong>Chennai, Tamil Nadu, India</strong>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="social-links-wrapper">
+                        <h4>Connect on Socials</h4>
+                        <div class="social-links">
+                            <a href="https://www.linkedin.com/in/sanjay-s-876253321?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="social-link-btn glass-card ripple" aria-label="LinkedIn">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-replacement-svg"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                            </a>
+                            <a href="https://www.instagram.com/sandy_editz_19" target="_blank" class="social-link-btn glass-card ripple" aria-label="Instagram">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-replacement-svg"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/></svg>
+                            </a>
+                            <a href="#" class="social-link-btn glass-card ripple" aria-label="Behance / Dribbble">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide-replacement-svg"><circle cx="12" cy="12" r="10"/><path d="M19.13 5.09C15.22 9.14 10 10.44 2.25 10.94"/><path d="M21.75 12.84c-6.62-1.41-12.15 1-14.78 6.85"/><path d="M5.16 19.13c2.72-5.7 7.71-8 16.15-5.9"/></svg>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact form panel -->
+                <div class="contact-form-wrapper glass-card scroll-reveal fade-up delay-200">
+                    <form id="contact-form" autocomplete="off">
+                        
+                        <div class="input-group">
+                            <input type="text" id="name" name="name" required placeholder=" " class="form-input">
+                            <label for="name" class="form-label">Full Name</label>
+                            <span class="input-border"></span>
+                        </div>
+
+                        <div class="input-group">
+                            <input type="email" id="email" name="email" required placeholder=" " class="form-input">
+                            <label for="email" class="form-label">Email Address</label>
+                            <span class="input-border"></span>
+                        </div>
+
+                        <div class="input-group">
+                            <textarea id="message" name="message" required placeholder=" " rows="5" class="form-input"></textarea>
+                            <label for="message" class="form-label">Your Message</label>
+                            <span class="input-border"></span>
+                        </div>
+
+                        <button type="submit" id="submit-btn" class="btn btn-primary btn-submit ripple">
+                            <span class="btn-text">Send Message</span>
+                            <span class="success-text hidden">Message Sent!</span>
+                            <span class="spinner hidden"></span>
+                            <i data-lucide="send" class="btn-icon send-icon"></i>
+                            <i data-lucide="check-circle" class="btn-icon success-icon hidden"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p class="copyright">&copy; 2026 Sanjay S. All rights reserved.</p>
+            <p class="built-with">
+                Built & Designed by <strong>Srinath</strong> for <strong>Sanjay S</strong>
+            </p>
+            <a href="#hero" class="back-to-top-btn" aria-label="Back to top">
+                <i data-lucide="arrow-up"></i>
+            </a>
+        </div>
+    </footer>
+
+    <!-- Floating Quick-Access Theme Toggle FAB -->
+    <button type="button" id="theme-toggle" class="floating-theme-toggle theme-toggle-trigger glass-card ripple" aria-label="Toggle dark/light theme" title="Switch Theme (Dark / Light)">
+        <i data-lucide="moon" class="theme-icon moon-icon"></i>
+        <i data-lucide="sun" class="theme-icon sun-icon"></i>
+        <span class="floating-tooltip">Theme</span>
+    </button>
+
+    <!-- Toast Notification Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <!-- Main JavaScript file -->
+    <script src="js/script.js"></script>
+</body>
+</html>

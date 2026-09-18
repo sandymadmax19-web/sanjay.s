@@ -1,0 +1,13 @@
+{
+  "name": "sandy",
+  "version": "1.0.0",
+  "description": "Sanjay S portfolio website",
+  "private": true,
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
